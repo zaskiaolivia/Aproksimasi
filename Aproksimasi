@@ -1,0 +1,22 @@
+import numpy as np
+
+print("="*60)
+print("IMPLEMENTASI POLINOMIAL APROKSIMASI LAGRANGE")
+print("="*60)
+
+# Input Data Mentah
+x = np.array([10.0, 20.0, 30.0, 40.0], dtype=float)
+y = np.array([82.0, 85.0, 88.0, 92.0], dtype=float)
+
+# Menghitung Garis Aproksimasi y = ax + b
+a, b = np.polyfit(x, y, 1)
+
+# Menghitung Nilai yang Dicari
+x_target = 25.0
+y_pred = a * x_target + b
+
+# Menampilkan Hasil
+print(f"Nilai data x (Ukuran file, MB): {x}")
+print(f"Nilai data y (Akurasi, %): {y}")
+print(f"Persamaan garis aproksimasi: y = {a:.2f}x + {b:.2f}")
+print(f"Nilai akurasi pada saat ukuran file {x_target} MB adalah {y_pred:.2f} %")
